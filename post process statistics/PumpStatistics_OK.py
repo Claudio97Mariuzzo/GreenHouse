@@ -150,4 +150,7 @@ if __name__=="__main__":
 
     #while connect_flag==1: #aggiungere connect_flag in MyMQTT in on_connect function
     while True:
-        time.sleep(5)
+        statistics_period=requests.get(str("http://"+str(json_dic["broker"])+':'+str(json_dic["port"])+"/statistics")))
+        water_period = int(statistics_period['water_period'])
+        
+        time.sleep(water_period)
